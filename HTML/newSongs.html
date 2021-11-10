@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Songs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <style>
+        .block_display {
+            margin-top: 200px;
+            width: 90%;
+            padding-left: 50px;
+            margin: auto;
+            z-index: 0;
+        }
+
+        .h-tag {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(229, 229, 229);
+        }
+
+        .block_display .cards_carousel {
+            width: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+
+        .block_display .cards_carousel .card {
+            margin: 20px;
+            margin-bottom: 60px;
+            transition: ease-out;
+            transition-duration: .5s;
+            text-decoration: none;
+            color: black;
+            float: left;
+            width: 180px;
+            height: 180px;
+        }
+
+        .block_display .cards_carousel .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .topnav {
+            position: relative;
+            z-index: 0;
+            margin-bottom: 100px;
+        }
+
+        /* player Css */
+        .bottom {
+            display: block;
+            position: sticky;
+            width: 100%;
+            bottom: 0;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        .playbox {
+            display: flex;
+            color: black;
+            margin-top: 5px;
+        }
+
+        .songInfo {
+            float: left;
+            margin-left: 50px;
+            margin-top: 15px;
+        }
+
+        .timer {
+            float: left;
+            margin-left: 5%;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 20px;
+            font-size: 12px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .icons {
+            margin-top: 8px;
+            float: left;
+            margin-left: 0%;
+        }
+
+        .icons i {
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            margin-bottom: 40px;
+            margin-left: 20px;
+        }
+
+        #myProgressBar {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            margin-top: 0;
+            color: tomato;
+            border: none;
+        }
+
+        #masterPlay {
+            background-color: rgb(231, 44, 48);
+            border-radius: 50%;
+            color: white;
+            font-size: 40px;
+        }
+
+        .songInfo img {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+
+        .repeate img {
+            margin-top: 6px;
+            width: 50px;
+            margin-left: 30px;
+        }
+
+        .songImg img {
+            width: 50px;
+            margin-top: 10px;
+            margin-left: 40px;
+        }
+
+        .songVol img {
+            width: 40px;
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+
+        .nextsongInfo {
+            margin-left: 15px;
+            padding-bottom: 40px;
+        }
+
+        .nextsongInfo p {
+            font-size: 12px;
+        }
+
+        .nextsongInfo span {
+            font-size: 15px;
+        }
+
+
+        @media screen and (max-width:1000px) {
+            .bottom {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar_container"></div>
+    <div class="block_display">
+        <h1 class="h-tag">New Songs 2021</h1>
+        <div class="cards_carousel releases">
+
+        </div>
+    </div>
+
+    <div id="footer">
+
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+        <div class="playbox">
+            <div class="songImg">
+                <img src="https://a10.gaanacdn.com/gn_img/albums/10q3Z1K52r/q3ZRe8G135/size_m.webp" alt="">
+            </div>
+            <div class="songInfo">
+                <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+            </div>
+            <div class="timer">
+                <p>00:00 / 05:20</p>
+            </div>
+            <div class="repeate">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyYli4elBHFKCUFmwSEMJRb2Gn0IWP9zCt2w&usqp=CAU" alt="">
+            </div>
+            <div class="icons">
+                <!-- fontawesome icons -->
+                <i class="fas fa-3x fa-step-backward" id="previous"></i>
+                <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-3x fa-step-forward" id="next"></i>
+                <i class="fas fa-3x fa-random"></i>
+            </div>
+            <div class="songVol">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn6JjnkTfI1sed7YLBmWL-VxPWGiwKeMwH3Q&usqp=CAU" alt="">
+            </div>
+            <div class="timer">
+                <p>Audio: High</p>
+            </div>
+            <div class="nextsongInfo">
+                <p>Up To Next</p>
+               <span id="nextSongName">Cielo - Huma-Huma</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+
+    </script>
+    <script>
+
+        async function requestData(type, query) {
+            try {
+                let res = await fetch(
+                    `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
+                )
+                let data = await res.json()
+                console.log(data);
+                return await data;
+            } catch {
+                console.log("Something went wrong");
+            }
+        }
+
+        var display_card = (type, url, location) => {
+            var data = requestData(type, url);
+            data.then((value) => {
+                let songs = value.songs;
+                let doc = document.body;
+                let cardsCarousel = doc.querySelector(`${location}`);
+                for (var i = 0; i < songs.length; i++) {
+                    let card = document.createElement("a");
+                    card.setAttribute("class", "card");
+                    card.href = songs[i].media_url;
+                    let img = document.createElement("img");
+                    img.src = songs[i].image;
+                    let name = document.createElement("p");
+                    name.textContent = songs[i].song;
+                    name.style.margin = "0%";
+                    name.style.fontWeight = "bold";
+                    card.append(img, name);
+                    cardsCarousel.append(card);
+                }
+            })
+        }
+
+        var releases_cards = () => {
+            var type = "result";
+            var url = "https://www.jiosaavn.com/featured/taaza-tunes/Me5RridRfDk_";
+            display_card(type, url, ".releases");
+        }
+        releases_cards();
+    </script>
+
+    <script src="audio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0px;
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Roboto', sans-serif;
+
+}
+.footer {
+    background-color: #FAFAFB;
+}
+#footContainer {
+    margin: auto;
+    height: auto;
+    width: 95%;
+    /* border: 1px solid green; */
+    text-align: center;
+    /* font-family: 'Roboto Slab', serif; */
+}
+#divRow1 {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    /* border: 1px solid red; */
+    padding-top: 25px;
+}
+#divRow1 > strong {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0px 0px 25px;
+    color: #000000;
+    
+}
+#divRow1 p {
+    /* font-family: 'Roboto', sans-serif; */
+    font-weight: 100;
+    font-size: 12px;
+    color: #8E8E93;
+    margin: 15px 174px 15px 174px;
+    padding-bottom: 10px;
+}
+
+#divRow2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#f img{
+   width: 60px;
+}
+#t img{
+    width: 100px;
+}
+
+#divRow3 {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    font-size: 12px;
+    /* gap: 1px; */
+    text-align: center;
+}
+#divRow3 a > span, #divRow3 a {
+    margin: auto;
+    color: #000000E6;
+    text-decoration: none;
+    font-weight: 400;
+    /* font-family: 'Roboto', sans-serif; */
+
+}
+#divRow3 a > span:hover {
+    color: rgb(194, 184, 184);
+}
+
+#divRow4 {
+    text-align: center;
+    display: flex;
+    width: 90%;
+    /* border: 2px solid teal; */
+    margin: auto;
+    flex-wrap: wrap;
+}
+#strng {
+    margin: 15px 0px 10px;
+    font-size: 18px;
+    padding: 10px 0px 10px;
+    display: inline-flex;
+    font-weight: 450;
+}
+.qlinks {
+    /* border: 2px solid fuchsia; */
+    flex-basis: 22%;
+    padding: 5px 15px 5px 10px;
+    margin-bottom: 15px;
+}
+.upperDiv {
+    display: flex;
+    color: #000000E6;
+    padding: 0px 0px 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.lowerDiv {
+    font-weight: 100;
+    /* width: 20%; */
+}
+.lowerDiv a {
+    color: #0000008A;
+    display: flex;
+    text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+    padding: 0px 0px 5px;
+    font-weight: 350;
+}
+.lowerDiv a:hover {
+    color: rgb(219, 210, 210);
+}
+.lowerDiv > .viewAll {
+    color: #E72C30;
+    font-weight: 500;
+    margin-top: 6px;
+}
+.lowerDiv > .viewAll:hover {
+    color: #7e1719;
+    
+}
+#copyRight {
+    padding: 15px 0px 15px;
+    color: #0000008A;
+    font-size: 14px;
+}

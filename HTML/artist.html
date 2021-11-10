@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Songs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <style>
+        .block_display{
+            margin-top: 200px;
+            width: 90%;
+            padding-left: 50px;
+            margin: auto;
+            z-index: 0;
+        }
+        
+        .h-tag{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(229,229,229);
+        }
+        .block_display .cards_carousel{
+            width: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+        
+        .block_display .cards_carousel .card{
+            margin: 20px;
+            margin-bottom: 60px;
+            transition: ease-out;
+            transition-duration: .5s;
+            text-decoration: none;
+            color: black;
+            float: left;
+            width: 180px;
+            height: 180px;
+        }
+        
+        .block_display .cards_carousel .card img{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .topnav{
+            position: relative;
+            z-index: 0;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar_container"></div>
+    <div class="block_display">
+        <h1 class="h-tag">Music Artists</h1>
+        <div class="cards_carousel artists">
+           
+        </div>
+    </div>
+
+    <div id="footer">
+         
+    </div>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+        
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+        
+    </script>
+    <script>
+
+        var artists = [["https://a10.gaanacdn.com/gn_img/artists/Dk9KNk23Bx/k9KNqJJbBx/size_m_1631509967.webp", "Arijit Singh"],
+        ["https://a10.gaanacdn.com/gn_img/artists/21GWwrR3pk/1GWwYz4DKp/size_m_1567610470.webp", "Tanishk Bagchi"],
+        ["https://a10.gaanacdn.com/gn_img/artists/zLp36PvbrG/Lp36AR0KrG/size_m_1516707336.webp", "Pritam"],
+        ["https://a10.gaanacdn.com/gn_img/artists/Rz4W87v3xD/Rz4W8ppWxD/size_m_1516701680.webp", "Neha Kakkar"],
+        ["https://a10.gaanacdn.com/gn_img/artists/9MAWe7KyJe/MAWe9lBGWy/size_m_1516185303.webp", "Badshah"],
+        ["https://a10.gaanacdn.com/gn_img/artists/6Zxb2r7b9w/Zxb2xp0w39/size_m.jpg", "B Praak"],
+        ["https://a10.gaanacdn.com/gn_img/artists/w4MKPDOKoj/4MKPgoQgbo/size_m_1516802409.webp", "Yo Yo Honey Singh"],
+        ["https://a10.gaanacdn.com/gn_img/artists/ZaP37OR3Dy/ZaP37lBWDy/size_m_1516796833.webp", "Lata Mangeshkar"],
+        ["https://a10.gaanacdn.com/gn_img/artists/Dk9KNk23Bx/k9KNgP763B/size_m_1595857138.webp", "Tony Kakkar"]];
+        
+        var artists_card = (location) => {
+            let doc = document.body;
+            let cardsCarousel = doc.querySelector(`${location}`);
+            for (var i = 0; i < artists.length; i++) {
+                let card = document.createElement("a");
+                card.setAttribute("class", "card");
+                card.href = "";
+                let img = document.createElement("img");
+                img.src = artists[i][0];
+                img.style.borderRadius = "50%";
+                let name = document.createElement("p");
+                name.textContent = artists[i][1];
+                name.style.margin = "0%";
+                name.style.fontWeight = "bold";
+                card.append(img, name);
+                cardsCarousel.append(card);
+            }
+        }
+        artists_card(".artists")
+       
+    </script>
+</body>
+</html>

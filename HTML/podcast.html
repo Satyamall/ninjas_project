@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <style>
+        .block_display{
+            margin-top: 200px;
+            width: 90%;
+            padding-left: 50px;
+            margin: auto;
+            z-index: 0;
+        }
+        
+        .h-tag{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(229,229,229);
+        }
+        .block_display .cards_carousel{
+            width: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+        
+        .block_display .cards_carousel .card{
+            margin: 20px;
+            margin-bottom: 60px;
+            transition: ease-out;
+            transition-duration: .5s;
+            text-decoration: none;
+            color: black;
+            float: left;
+            width: 180px;
+            height: 180px;
+        }
+        
+        .block_display .cards_carousel .card img{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .topnav{
+            position: relative;
+            z-index: 0;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar_container"></div>
+    <div class="block_display">
+        <h1 class="h-tag">Podcasts</h1>
+        <div class="cards_carousel podcast">
+           
+        </div>
+    </div>
+
+    <div id="footer">
+         
+    </div>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+        
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+        
+    </script>
+    <script>
+
+        async function requestData(type, query) {
+            try {
+                let res = await fetch(
+                    `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
+                )
+                let data = await res.json()
+                console.log(data);
+                return await data;
+            } catch {
+                console.log("Something went wrong");
+            }
+        }
+        
+        var display_c = (type, url, location) => {
+            var data = requestData(type, url);
+            data.then((value) => {
+                let doc = document.body;
+                let cardsCarousel = doc.querySelector(`${location}`);
+                for (var i = 0; i < value.length; i++) {
+                    let card = document.createElement("a");
+                    card.setAttribute("class", "card");
+                    card.href = value[i].media_url;
+                    let img = document.createElement("img");
+                    img.src = value[i].image;
+                    let name = document.createElement("p");
+                    name.textContent = value[i].song;
+                    name.style.margin = "0%";
+                    name.style.fontWeight = "bold";
+                    card.append(img, name);
+                    cardsCarousel.append(card);
+                }
+            })
+        }
+
+        var podcast_cards = () => {
+            var type = "result";
+            var url = "podcasts";
+            display_c(type, url, ".podcast");
+            display_c(type, "My Friend Vishnu", ".podcast");
+            display_c(type, "Tech Flix", ".podcast");
+            display_c(type, "Garv Hai", ".podcast");
+            display_c(type, "All Things Music With Sarthak", ".podcast");
+            display_c(type, "Dil Se Pallavi Ke Saath", ".podcast");
+            display_c(type, "90'S Ki Cassette With Manjula", ".podcast");
+            display_c(type, "Sarthak’s Rockumentary", ".podcast");
+            display_c(type, "Shayad-podcasts", ".podcast");
+            display_c(type, "Jai Shree Hanuman", ".podcast");
+            display_c(type, "Ye Hai Dhande Ki Baat", ".podcast");
+            display_c(type, "Nanhi Chudail", ".podcast");
+            display_c(type, "Chandrakanta", ".podcast");
+            display_c(type, "Behad", ".podcast");
+            display_c(type, "Malavgarh Ki Malvika", ".podcast");
+            display_c(type, "Darnaa Manaa Hai", ".podcast");
+            display_c(type, "Sachin Tendulkar", ".podcast");
+            display_c(type, "Bill Gates", ".podcast");
+            display_c(type, "Tony Hsieh", ".podcast");
+            display_c(type, "Lala Lajpat Rai", ".podcast");
+            display_c(type, "Mark Zuckerberg", ".podcast");
+            display_c(type, "Steve Jobs", ".podcast");
+            display_c(type, " The Left Right Game", ".podcast");
+            display_c(type, " Pattern Of Purpose", ".podcast");
+            display_c(type, " Diet Science", ".podcast");
+            display_c(type, "Fascinating Entrepreneurs", ".podcast");
+            display_c(type, "2-Minute Talk Tips", ".podcast");
+            display_c(type, "The Story Behind Her Success", ".podcast");
+            display_c(type, "Eric On The World", ".podcast");
+            display_c(type, "Live Your Best Life", ".podcast");
+            display_c(type, "Aaj Ka Rashifal", ".podcast");
+            display_c(type, "राशिफल और ज्योतिष", ".podcast");
+            display_c(type, "Your Stars Today", ".podcast");
+            display_c(type, "Astrovaani", ".podcast");
+            display_c(type, "Astrology Zoned", ".podcast");
+        }
+        podcast_cards();
+    </script>
+</body>
+</html>

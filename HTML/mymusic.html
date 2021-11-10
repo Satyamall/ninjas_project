@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <style>
+        .block_display{
+            margin-top: 200px;
+            width: 90%;
+            padding-left: 50px;
+            margin: auto;
+            z-index: 0;
+        }
+        
+        .h-tag{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(229,229,229);
+        }
+        .block_display .cards_carousel{
+            width: 100%;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+        
+        .block_display .cards_carousel .card{
+            margin: 20px;
+            margin-bottom: 60px;
+            transition: ease-out;
+            transition-duration: .5s;
+            text-decoration: none;
+            color: black;
+            float: left;
+            width: 180px;
+            height: 180px;
+        }
+        
+        .block_display .cards_carousel .card img{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .topnav{
+            position: relative;
+            z-index: 0;
+            margin-bottom: 100px;
+        }
+        .playlist{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .playlist img{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar_container"></div>
+    <div class="block_display">
+        <h1 class="h-tag">My Music</h1>
+        <div class="playlist">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm5vgsby-LmccdxbxtnaFzgeukOKH6r9dTkw&usqp=CAU" alt="">
+            Create Playlist
+        </div>
+        <div class="cards_carousel mymusic">
+           
+        </div>
+    </div>
+
+    <div id="footer">
+         
+    </div>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+        
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+    </script>
+
+</body>
+</html>

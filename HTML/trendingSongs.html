@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="/CSS/trendingSongs.css" />
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <title>Trending Songs</title>
+</head>
+<body>
+    <div id="navbar_container">
+        <!-- Data will be fetched and appended here -->
+    </div>
+
+    <div id="wholeContainer">
+        <section id="topSection">
+            <div id="imgDiv">
+                <img id="posterImage" alt=""/>
+            </div>
+
+            <div id="infoDiv">
+                <div id="headingTitle">
+                    <h1>Trending Songs</h1>
+                </div>
+                <div id="playlistInformation">
+                    <span class="playlist-details">Top trending hits, refreshed daily</span>
+                    <br/>
+                    <span class="playlist-details">Created by Gaana</span>
+                    <br/>
+                    <span class="playlist-details numberOfTracks">30 Tracks</span>
+                </div>
+                <div id="playBtnDiv">
+                    
+                        <button id="playBttn">
+                            <a href="#" id="aTagPlayBtn">Play</a>
+                        </button>
+                </div>
+            </div>
+        </section>
+        <br/><br/><br/><br/>
+        <section class="song-list">
+            <ul class="row-heading">
+                <li class="individual-li"></li>
+
+                <li class="individual-li">
+                    <div class="li-div-track">Track</div>
+                </li>
+                <li class="individual-li">
+                    <div class="li-div-artists">Artists</div>
+                </li>
+                <li class="individual-li">
+                    <div class="li-div-duration">Duration</div>
+                </li>
+            </ul>
+        </section>
+        <hr/>
+    </div>
+    <div id="footer">
+         
+    </div>
+    <script src="../JS/script.js"></script>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="text/javascript" src="/JS/trendingSongs.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+    </script>
+</body>
+</html>
